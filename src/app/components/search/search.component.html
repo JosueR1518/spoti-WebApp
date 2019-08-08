@@ -1,0 +1,18 @@
+<div class="contanier">
+<div class="row">
+  <div class="col-md-3">
+    <input class="form-control" (keyup)="buscar()" type="text" [(ngModel)]="termino" placeholder="Buscar artista.." name="termino" value=""/>
+  </div>
+
+<div class="col-md-9">
+  <div class="row">
+    <div class="col-md-3 puntero" *ngFor="let artista of _sptifyService.artistas" [routerLink]="['/artista',artista.id]">
+ <img [src]="artista.images|sinfoto" class="img-fluid img-thumbnail" alt="">
+ <p class="text-center">{{artista.name}}</p>
+ <hr>
+    </div>
+
+  </div>
+</div>
+</div>
+</div>
