@@ -15,6 +15,8 @@ import { SearchComponent } from './components/search/search.component';
 import {APP_ROUTING} from './app.routes';
 import { SinfotoPipe } from './pipes/sinfoto.pipe';
 import { ArtistaComponent } from './components/artista/artista.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+import { DomSeguroPipe } from './pipes/dom-seguro.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { ArtistaComponent } from './components/artista/artista.component';
     SearchComponent,
     SinfotoPipe,
     ArtistaComponent,
+    LoadingComponent,
+    DomSeguroPipe,
 
   ],
   imports: [

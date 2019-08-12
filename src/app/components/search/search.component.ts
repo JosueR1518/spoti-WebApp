@@ -6,8 +6,9 @@ import {SpotifyService} from '../../services/spotify.service';
   styles: []
 })
 export class SearchComponent implements OnInit {
-termino:string="";
-artistas:any[];
+termino:string = "";
+artistas: any[]= [];
+loading = false;
   constructor(private _sptifyService:SpotifyService) { }
 
   ngOnInit() {
@@ -16,7 +17,18 @@ artistas:any[];
   }
 
 buscar(){
+
+  this.loading = true;
   console.log(this.termino);
-this._sptifyService.getArtistas(this.termino).subscribe();
+
+  if (this.termino === '') {
+    this.loading= false;
+    return false;
+  }
+this._sptifyService.getArtistas(this.termino).subscribe((resp: any) => {
+
+  this.artistas = resp;
+  this.loading = false;
+});
 }
 }
